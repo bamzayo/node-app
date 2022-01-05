@@ -18,11 +18,12 @@ app.use("/api/v1/tasks", router)
 app.use(notFound)
 app.use(errorHandler)
 
+const PORT = process.env.PORT || 3000
 const makeConnection = async () => {
     try {
         await connect(process.env.Bamz_URI)
-        app.listen("8080", ()=>{
-            console.log("Listening to port 8080")
+        app.listen(PORT, ()=>{
+            console.log(`Listening to port ${PORT}`)
         })
 
     } catch (error) {
