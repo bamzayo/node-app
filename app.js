@@ -13,7 +13,7 @@ const errorHandler = require("./middlewears/err");
 // app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname, "Public")))
 
 // routes
 app.use("/api/v1/tasks", router)
