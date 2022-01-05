@@ -11,14 +11,16 @@ const errorHandler = require("./middlewears/err");
 // middlewears
 // app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
-app.get("/", (req,res)=> {
-    res.send("This should work...")
-})
+app.use(express.static(path.join(__dirname, "public")))
 
 // routes
 app.use("/api/v1/tasks", router)
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"))
+})
 // errH
 app.use(notFound)
 app.use(errorHandler)
