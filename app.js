@@ -9,7 +9,7 @@ const errorHandler = require("./middlewears/err");
 
 
 // middlewears
-// app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'Public')));
 // app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
