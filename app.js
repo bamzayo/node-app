@@ -18,9 +18,9 @@ app.use(express.static(path.join(__dirname, "public")))
 // routes
 app.use("/api/v1/tasks", router)
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"))
-})
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "public", "index.html"))
+// })
 // errH
 app.use(notFound)
 app.use(errorHandler)
